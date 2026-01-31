@@ -1,6 +1,8 @@
-package Player;
+package Player.PlayerState;
 
-public class AliveState implements PlayerState{
+import Player.Player;
+
+public class AliveState implements PlayerState {
     @Override
     public void handle(Player player){
         if(player.getHealth() <= 0){

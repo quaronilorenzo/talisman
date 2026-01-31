@@ -1,4 +1,6 @@
-package Player;
+package Player.PlayerState;
+
+import Player.Player;
 
 public class DeathState implements PlayerState {
     @Override

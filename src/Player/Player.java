@@ -1,12 +1,15 @@
 package Player;
 
+import Player.PlayerState.AliveState;
+import Player.PlayerState.PlayerState;
+
 public class Player {
     private String name;
-    private int health = PlayerCostants.STARTING_HEALTH;
-    private int strength = PlayerCostants.STARTING_STRENGTH;
-    private int attack = PlayerCostants.BAREKNUCKLE_DAMAGE;
-    private int defense = PlayerCostants.STARTING_DEFENSE;
-    private int xp = PlayerCostants.STARTING_XP;
+    private int health;
+    private int strength;
+    private int attack;
+    private int defense;
+    private int lvl = PlayerCostants.STARTING_LVL;
     private PlayerState state;
     public Player(String name, int health, int attack, int defense, int strength){
         this.name = name;
