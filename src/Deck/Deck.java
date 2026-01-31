@@ -6,16 +6,21 @@ import Npc.Npc;
 import java.util.Random;
 
 public class Deck {
+    private final static Random rand = new Random();
     public Card draw(){
-        Random rand = new Random();
-        int randomCard = rand.nextInt(2); // 0 - 1
-        switch(randomCard){
-            case 0:
+        CardType cardType = randomCardtype();
+
+        switch(cardType){
+            case ENEMY:
                 return new Enemy();
-            case 1:
+            case NPC:
                 return new Npc();
         }
         throw new IllegalStateException("Unknown card");
     }
-
+    private CardType randomCardtype(){
+        CardType[] cardTypes = CardType.values();
+        int randomCard = rand.nextInt(cardTypes.length); // 0 - 1
+        return cardTypes[randomCard];
+    }
 }
