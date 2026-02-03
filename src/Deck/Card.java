@@ -1,5 +1,5 @@
 package Deck;
 
-public interface Card {
-    public void interact();
+public interface Card{
+    public  void interact();
 }

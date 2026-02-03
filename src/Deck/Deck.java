@@ -27,7 +27,7 @@ public class Deck {
         int randomCard = rand.nextInt(enemyTypes.length); // 1
         return enemyTypes[randomCard];
     }
-    private Card randomEnemyFactory(){
+    private Enemy randomEnemyFactory(){
         EnemyType enemyType = randomEnemyType();
         switch(enemyType){
             case VAMPIRE:
@@ -38,7 +38,7 @@ public class Deck {
     private Card randomCardFactory(CardType cardType){
         switch(cardType){
             case ENEMY:
-                return randomEnemyFactory();
+                return  randomEnemyFactory();
 
             case NPC:
                 return new Npc();
