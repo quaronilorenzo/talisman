@@ -3,7 +3,7 @@ package Enemies;
 import java.util.List;
 
 public class VampireCostants {
-    public static final List<String> STARTINGPHRASES = List.of(
+     List<String> STARTINGPHRASES = List.of(
             "Your pulse betrays you.",
             "Run. It sweetens the blood.",
             "I can hear your heart arguing with your fear.",

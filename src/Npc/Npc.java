@@ -2,9 +2,18 @@ package Npc;
 
 import Deck.Card;
 
-public class Npc implements Card {
+import java.util.List;
+
+public class Npc extends Card {
+
     @Override
-    public void interact() {
-        System.out.println("Hi Vagabond! How are ya?");
+    public List<String> getPhrases() {
+        return getNpcCostants();
     }
+
+    public List<String> getNpcCostants() {
+        return npcCostants.STARTINGPHRASES;
+    }
+
+    NpcCostants npcCostants = new NpcCostants();
 }

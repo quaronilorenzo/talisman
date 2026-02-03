@@ -2,9 +2,6 @@ package Enemies;
 
 import Deck.Card;
 
-public class Enemy implements Card {
-    @Override
-    public void interact() {
+import java.util.List;
 
-    }
-}
+public abstract class Enemy extends Card {}

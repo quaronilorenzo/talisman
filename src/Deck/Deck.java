@@ -11,7 +11,7 @@ public class Deck {
     private final static Random rand = new Random();
     /**
       I wanted to make a very readable function,
-      thats why i didnt made the factory switch here but created another method
+      that's why I didn't do the factory switch here but created another method
      */
     public Card draw(){
         CardType cardType = randomCardtype();

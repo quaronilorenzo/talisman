@@ -5,25 +5,13 @@ import Deck.Card;
 import java.util.List;
 import java.util.Random;
 
-public class Vampire extends Enemy implements Card{
-    private final static Random randomPhraseGenerator = new Random();
+public class Vampire extends Enemy {
     @Override
-    public void interact() {
-        System.out.println(vampireCostants.STARTINGPHRASES
-                .get(
-                    randomPhraseGenerator.nextInt(
-                            VampireCostants.STARTINGPHRASES.size()
-                    )
-                )
-        );
+    public List<String> getPhrases() {
+        return getVampireCostants();
+    }
+    public List<String> getVampireCostants() {
+        return vampireCostants.STARTINGPHRASES;
     }
     private VampireCostants vampireCostants = new VampireCostants();
-
-    public VampireCostants getVampireCostants() {
-        return vampireCostants;
-    }
-
-    public void setVampireCostants(VampireCostants vampireCostants) {
-        this.vampireCostants = vampireCostants;
-    }
 }
