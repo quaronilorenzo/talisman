@@ -1,4 +1,5 @@
 import Deck.*;
+import Enemies.Enemy;
 import Enemies.Vampire;
 import Player.Player;
 
@@ -10,6 +11,10 @@ public class Main {
         for (int i = 0; i < 5; i++) {
             Card drawnCard = deck.draw();
             drawnCard.interact(drawnCard.getPhrases());
+            //TODO starting creating class game and fighting system
+            if(drawnCard instanceof Enemy){
+                System.out.println("nemico");
+            }
         }
     }
 }
