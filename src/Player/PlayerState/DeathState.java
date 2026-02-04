@@ -5,7 +5,7 @@ import Player.Player;
 public class DeathState implements PlayerState {
     @Override
     public void handle(Player player){
-        System.out.println("Game Over!, you are dead");
+        System.out.println("Game.Game Over!, you are dead");
     }
 
     @Override

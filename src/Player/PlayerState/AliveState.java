@@ -12,6 +12,11 @@ public class AliveState implements PlayerState {
 
     @Override
     public void attack(Player player) {
-        //TODO attack - enemy health
+        if(player.getHealth() > 0){
+
+        }else{
+            player.setState(new DeathState());
+        }
+
     }
 }
