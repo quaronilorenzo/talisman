@@ -15,5 +15,5 @@ public class Npc extends Card {
         return npcCostants.STARTINGPHRASES;
     }
 
-    NpcCostants npcCostants = new NpcCostants();
+    private NpcCostants npcCostants = new NpcCostants();
 }

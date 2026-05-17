@@ -31,7 +31,7 @@ public class Deck {
         EnemyType enemyType = randomEnemyType();
         switch(enemyType){
             case VAMPIRE:
-                return new Vampire();
+                return new Vampire(60,2, 0); //TODO creating an automatic system
         }
         throw new IllegalStateException("Enemy not found");
     }

@@ -14,4 +14,10 @@ public class Vampire extends Enemy {
         return vampireCostants.STARTINGPHRASES;
     }
     private VampireCostants vampireCostants = new VampireCostants();
+    public Vampire(){}
+    public Vampire(int health, int attack, int defense) {
+        this.setHealth(health);
+        this.setAttack(attack);
+        this.setDefense(defense);
+    }
 }
