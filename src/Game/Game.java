@@ -10,7 +10,6 @@ public class Game {
 
     private Game() {}
 
-    private boolean isWinning;
     public void fight(Enemy enemy, Player player){
         while(player.getHealth() > 0 && enemy.getHealth() > 0){
             playerTurn(enemy, player);
@@ -26,26 +25,28 @@ public class Game {
         enemy.setHealth(healthDamaged);
         if(enemy.getHealth() < 0){
             enemy.setHealth(0);
+            System.out.println();
+        }else{
+            System.out.println("Hit confirmed! The enemy has " + enemy.getHealth() + " HP remaining");
         }
-        System.out.println("Hit confirmed! The enemy has " + enemy.getHealth() + " HP remaining");
     }
     private void enemyTurn(Enemy enemy, Player player){
         int healthDamaged = player.getHealth() - enemy.getAttack();
         player.setHealth(healthDamaged);
         if(player.getHealth() < 0){
             player.setHealth(0);
+        }else{
+            System.out.println("Hit confirmed! You have " + player.getHealth() + " HP remaining");
         }
-        System.out.println("Hit confirmed! You have " + player.getHealth() + " HP remaining");
     }
 
-    public boolean isWinning() {
-        return isWinning;
+
+    private void isWinning(Player player, Enemy enemy){
+        enemy.interact(enemy.getPhrases());
     }
 
-    public void setWinning(boolean winning) {
-        this.isWinning = winning;
-    }
 
+    // Singleton
     public static Game getGame() {
         return game;
     }

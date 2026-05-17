@@ -3,8 +3,10 @@ package Enemies;
 import Deck.Card;
 
 import java.util.List;
+import java.util.Random;
 
 public abstract class Enemy extends Card {
+    private String name;
     private int health;
     private int attack;
     private int defense;
@@ -32,4 +34,14 @@ public abstract class Enemy extends Card {
     public void setDefense(int defense) {
         this.defense = defense;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public abstract List<String> getFightingPhrases(boolean enemyWon);
 }

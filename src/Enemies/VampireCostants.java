@@ -3,14 +3,16 @@ package Enemies;
 import java.util.List;
 
 public class VampireCostants {
-     List<String> STARTINGPHRASES = List.of(
+    private static VampireCostants vampireCostants = new VampireCostants();
+    private VampireCostants(){}
+     List<String> startingPhrases = List.of(
             "Your pulse betrays you.",
             "Run. It sweetens the blood.",
             "I can hear your heart arguing with your fear.",
             "You were alive when I noticed you.",
             "Invite me… or bleed."
     );
-    List<String> KILLPHRASES = List.of(
+    List<String> winningPhrases = List.of(
             "Another life… extinguished with grace.",
             "Your heart no longer beats… but my hunger is sated.",
             "Silence suits you.",
@@ -22,7 +24,7 @@ public class VampireCostants {
             "Your scream echoes only in memory.",
             "Even death can’t outrun me."
     );
-    List<String> deathPhrases = List.of(
+    List<String> losingPhrases = List.of(
             "I… will rise again…",
             "The darkness… does not end with me.",
             "You… think this is victory?",
@@ -34,5 +36,9 @@ public class VampireCostants {
             "Life fades… but hunger remains.",
             "Do not… weep for me."
     );
+
+    public static VampireCostants getVampireCostants() {
+        return vampireCostants;
+    }
 
 }
