@@ -7,18 +7,10 @@ public class Vampire extends Enemy {
     public List<String> getPhrases() {
         return getVampireStartingPhrases();
     }
-    @Override
-    public List<String> getFightingPhrases(boolean enemyWon){
-        if(enemyWon == true){
-            return getVampireWinningPhrases();
-        }else{
-            return getVampireLosingPhrases();
-        }
-    }
     private List<String> getVampireStartingPhrases() {
         return vampireCostants.startingPhrases;
     }
-    private List<String> getVampireWinningPhrases(){
+     public List<String> getVampireWinningPhrases(){
         return vampireCostants.winningPhrases;
     }
     private List<String> getVampireLosingPhrases(){

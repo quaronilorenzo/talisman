@@ -43,5 +43,4 @@ public abstract class Enemy extends Card {
         this.name = name;
     }
 
-    public abstract List<String> getFightingPhrases(boolean enemyWon);
 }
