@@ -13,36 +13,41 @@ public class Game {
     public void fight(Enemy enemy, Player player){
         while(player.getHealth() > 0 && enemy.getHealth() > 0){
             playerTurn(enemy, player);
-            if(enemy.getHealth() == 0){
-                // setWinning();
-                break;
-            }
             enemyTurn(enemy, player);
+            printPhrases(enemy,player);
         }
     }
     private void playerTurn(Enemy enemy, Player player){
-        int healthDamaged = enemy.getHealth() - player.getAttack();
-        enemy.setHealth(healthDamaged);
-        if(enemy.getHealth() < 0){
-            enemy.setHealth(0);
-            System.out.println();
-        }else{
-            System.out.println("Hit confirmed! The enemy has " + enemy.getHealth() + " HP remaining");
+        if(player.getHealth() != 0){
+            int healthDamaged = enemy.getHealth() - player.getAttack();
+            enemy.setHealth(healthDamaged);
+            if(enemy.getHealth() < 0){
+                enemy.setHealth(0);
+            }else{
+                System.out.println("Hit confirmed! The enemy has " + enemy.getHealth() + " HP remaining");
+            }
         }
     }
     private void enemyTurn(Enemy enemy, Player player){
-        int healthDamaged = player.getHealth() - enemy.getAttack();
-        player.setHealth(healthDamaged);
-        if(player.getHealth() < 0){
-            player.setHealth(0);
-        }else{
-            System.out.println("Hit confirmed! You have " + player.getHealth() + " HP remaining");
+        if(enemy.getHealth() != 0){
+            int healthDamaged = player.getHealth() - enemy.getAttack();
+            player.setHealth(healthDamaged);
+            if(player.getHealth() < 0){
+                player.setHealth(0);
+            }else{
+                System.out.println("Hit confirmed! You have " + player.getHealth() + " HP remaining");
+            }
         }
     }
 
 
-    private void isWinning(Player player, Enemy enemy){
-        enemy.interact(enemy.getPhrases());
+    private void printPhrases(Enemy enemy, Player player){
+        if (player.getHealth() == 0 && enemy.getHealth() > 0){
+            System.out.println(enemy.getWinningPhrases());
+        }
+        if (player.getHealth() > 0 && enemy.getHealth() == 0){
+            System.out.println(enemy.getLosingPhrases());
+        }
     }
 
 

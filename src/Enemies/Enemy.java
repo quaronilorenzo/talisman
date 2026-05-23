@@ -42,5 +42,6 @@ public abstract class Enemy extends Card {
     public void setName(String name) {
         this.name = name;
     }
-
+    public abstract List<String> getWinningPhrases();
+    public abstract List<String> getLosingPhrases();
 }

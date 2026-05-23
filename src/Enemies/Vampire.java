@@ -10,10 +10,12 @@ public class Vampire extends Enemy {
     private List<String> getVampireStartingPhrases() {
         return vampireCostants.startingPhrases;
     }
-     public List<String> getVampireWinningPhrases(){
+    @Override
+    public List<String> getWinningPhrases(){
         return vampireCostants.winningPhrases;
     }
-    private List<String> getVampireLosingPhrases(){
+    @Override
+    public List<String> getLosingPhrases(){
         return vampireCostants.losingPhrases;
     }
     private VampireCostants vampireCostants = VampireCostants.getVampireCostants();

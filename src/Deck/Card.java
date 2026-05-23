@@ -1,5 +1,6 @@
 package Deck;
 
+import Deck.Utils.RandomPhraseGenerator;
 import Enemies.VampireCostants;
 
 import java.util.List;
@@ -7,15 +8,9 @@ import java.util.Random;
 
 
 public abstract class Card{
-    private final static Random randomPhraseGenerator = new Random();
+    RandomPhraseGenerator randomPhraseGenerator = RandomPhraseGenerator.getRandomPhraseGenerator();
     public void interact(List<String> phrases) {
-        System.out.println(phrases
-                .get(
-                        randomPhraseGenerator.nextInt(
-                                phrases.size()
-                        )
-                )
-        );
+        System.out.println(randomPhraseGenerator.generatePhrase(phrases));
     }
     public abstract List<String> getPhrases();
 }
