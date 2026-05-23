@@ -4,31 +4,20 @@ import Enemies.Enemy;
 import Enemies.EnemyType;
 import Enemies.Vampire;
 import Npc.Npc;
+import Utils.RandomGenerator;
 
 import java.util.Random;
 
 public class Deck {
     private final static Random rand = new Random();
-    /**
-      I wanted to make a very readable function,
-      that's why I didn't do the factory switch here but created another method
-     */
+    RandomGenerator randomGenerator = RandomGenerator.getRandomPhraseGenerator();
     public Card draw(){
-        CardType cardType = randomCardtype();
+        CardType cardType = randomGenerator.getRandomCardtype();
         return randomCardFactory(cardType);
     }
-    private CardType randomCardtype(){
-        CardType[] cardTypes = CardType.values();
-        int randomCard = rand.nextInt(cardTypes.length); // 0 - 1
-        return cardTypes[randomCard];
-    }
-    private EnemyType randomEnemyType(){
-        EnemyType[] enemyTypes = EnemyType.values();
-        int randomCard = rand.nextInt(enemyTypes.length); // 1
-        return enemyTypes[randomCard];
-    }
+
     private Enemy randomEnemyFactory(){
-        EnemyType enemyType = randomEnemyType();
+        EnemyType enemyType = randomGenerator.getRandomEnemyType();
         switch(enemyType){
             case VAMPIRE:
                 return new Vampire(60,100, 0); //TODO creating an automatic system

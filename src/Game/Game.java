@@ -2,12 +2,11 @@ package Game;
 
 import Enemies.Enemy;
 import Player.Player;
-
-import java.util.Objects;
+import Utils.RandomGenerator;
 
 public class Game {
     private static Game game = new Game();
-
+    private RandomGenerator randomPhraseGenerator = RandomGenerator.getRandomPhraseGenerator();
     private Game() {}
 
     public void fight(Enemy enemy, Player player){
@@ -43,13 +42,12 @@ public class Game {
 
     private void printPhrases(Enemy enemy, Player player){
         if (player.getHealth() == 0 && enemy.getHealth() > 0){
-            System.out.println(enemy.getWinningPhrases());
+            System.out.println(randomPhraseGenerator.generatePhrase(enemy.getWinningPhrases()));
         }
         if (player.getHealth() > 0 && enemy.getHealth() == 0){
-            System.out.println(enemy.getLosingPhrases());
+            System.out.println(randomPhraseGenerator.generatePhrase(enemy.getLosingPhrases()));
         }
     }
-
 
     // Singleton
     public static Game getGame() {
