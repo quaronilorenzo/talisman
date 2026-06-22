@@ -1,16 +1,19 @@
 package Enemies;
 
 import Deck.Card;
+import Game.Game;
+import Player.Player;
 
 import java.util.List;
-import java.util.Random;
 
 public abstract class Enemy extends Card {
     private String name;
     private int health;
     private int attack;
     private int defense;
-
+    public void applyEffect(Game game, Player player) {
+        game.fight(this, player);
+    }
     public int getHealth() {
         return health;
     }

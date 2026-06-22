@@ -33,6 +33,7 @@ public class Game {
             player.setHealth(healthDamaged);
             if(player.getHealth() < 0){
                 player.setHealth(0);
+                System.out.println("You have been defeated! The enemy has " + enemy.getHealth() + " HP remaining");
             }else{
                 System.out.println("Hit confirmed! You have " + player.getHealth() + " HP remaining");
             }
